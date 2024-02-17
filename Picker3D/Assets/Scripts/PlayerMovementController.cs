@@ -6,7 +6,6 @@ public class PlayerMovementController : MonoBehaviour
 {
     public static PlayerMovementController Instance { get; private set; }
     [SerializeField] Rigidbody ownRb;
-    [SerializeField] Transform innerTransform;
     [SerializeField] Vector2 limits_horizontal = new Vector2(-5, 5);
     [SerializeField] float speed_horizontal = 1;
     [SerializeField] float speed_forward = 1;
@@ -43,16 +42,41 @@ public class PlayerMovementController : MonoBehaviour
         canMove_horizontal = false;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        ownRb.velocity = canMove_forward ? Vector3.forward * speed_forward : Vector3.zero;
+        Vector3 velocity = Vector3.zero;
+        if (canMove_forward)
+        {
+            velocity.z = speed_forward;
+        }
 
         if (canMove_horizontal)
         {
-            float lerpT = Mathf.InverseLerp(limits_horizontal.x, limits_horizontal.y, innerTransform.localPosition.x);
-            lerpT = Mathf.Clamp01(lerpT + movementChange.x * speed_horizontal * Time.deltaTime);
-            innerTransform.localPosition = new Vector3(Mathf.Lerp(limits_horizontal.x, limits_horizontal.y, lerpT), 0, 0);
+            if (CheckSideLimits())
+                velocity.x = speed_horizontal * movementChange.x;
         }
+
+        ownRb.velocity = velocity;
+    }
+
+    bool CheckSideLimits()
+    {
+        if (movementChange.x > 0)
+        {
+            if (transform.position.x + 0.15f >= limits_horizontal.y)
+            {
+                return false;
+            }
+        }
+        else
+        {
+            if (transform.position.x - 0.15f <= limits_horizontal.x)
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 
 
