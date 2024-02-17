@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7234751513249309919}
   m_Layer: 8
   m_Name: Collider (7)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 1597563474517836461}
   m_Layer: 8
   m_Name: Collider (3)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 8480783857017797360}
   m_Layer: 8
   m_Name: Collider (6)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -175,7 +175,7 @@ GameObject:
   - component: {fileID: 4397441968122191473}
   m_Layer: 8
   m_Name: Collider (1)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -220,7 +220,7 @@ GameObject:
   - component: {fileID: 1410160610105630635}
   m_Layer: 8
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -256,7 +256,7 @@ MonoBehaviour:
   innerTransform: {fileID: 114343443201362929}
   limits_horizontal: {x: -5, y: 5}
   speed_horizontal: 175
-  speed_forward: 1
+  speed_forward: 20
 --- !u!54 &1410160610105630635
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -271,7 +271,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 1
-  m_Constraints: 116
+  m_Constraints: 118
   m_CollisionDetection: 2
 --- !u!1 &2943256784423620073
 GameObject:
@@ -354,7 +354,7 @@ GameObject:
   - component: {fileID: 8650839619826610776}
   m_Layer: 8
   m_Name: Collider (5)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -398,7 +398,7 @@ GameObject:
   - component: {fileID: 4980316639038389951}
   m_Layer: 8
   m_Name: Collider (4)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -442,7 +442,7 @@ GameObject:
   - component: {fileID: 7198739463767919540}
   m_Layer: 8
   m_Name: Collider (2)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -536,6 +536,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 6c72fd14927c3d146b458924bf1a65b9,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ddc03189c56d9ca47908a136c0d8ca88, type: 2}
     - target: {fileID: 919132149155446097, guid: 6c72fd14927c3d146b458924bf1a65b9,
         type: 3}
       propertyPath: m_Name

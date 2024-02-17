@@ -45,6 +45,8 @@ public static class GameManager
 
         if (GamePhase != GamePhases.Running)
             return;
+
+        Debug.Log("Failed");
     }
 
 }
