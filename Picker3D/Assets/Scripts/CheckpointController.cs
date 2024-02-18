@@ -54,6 +54,7 @@ public class CheckpointController : MonoBehaviour
             if (other.CompareTag("Player"))
             {
                 PlayerMovementController.Instance.StopMovement_Forward();
+                PlayerCollectionController.Instance.PushCollectedPlayerObjects();
                 currentState = States.Collecting;
                 CheckTargetCount();
             }
