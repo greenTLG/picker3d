@@ -20,7 +20,7 @@ TagManager:
   - PlayerObject
   - Checkpoint
   - RoadSide
-  - 
+  - PlayerObjContainer
   - 
   - 
   - 
