@@ -9,6 +9,7 @@ public class PlayerInputHandler : MonoBehaviour, IPointerDownHandler, IPointerUp
 
     bool mouseDown = false;
     Vector3 firstMousePos;
+    FinishController currentFinish;
 
     void Awake()
     {
@@ -24,7 +25,8 @@ public class PlayerInputHandler : MonoBehaviour, IPointerDownHandler, IPointerUp
         {
             GameManager.StartToMove();
         }
-
+        if (currentFinish != null)
+            currentFinish.SpeedUp();
         mouseDown = true;
         ResetMovementChange();
     }
@@ -58,6 +60,11 @@ public class PlayerInputHandler : MonoBehaviour, IPointerDownHandler, IPointerUp
     public void ResetMovementChange()
     {
         firstMousePos = Input.mousePosition;
+    }
+
+    public void SetFinishController(FinishController finish)
+    {
+        currentFinish = finish;
     }
 
 

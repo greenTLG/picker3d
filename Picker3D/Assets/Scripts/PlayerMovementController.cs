@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,6 +13,7 @@ public class PlayerMovementController : MonoBehaviour
     bool canMove_forward = false;
     bool canMove_horizontal = true;
     Vector2 movementChange = Vector2.zero;
+    bool isFlying = false;
     void Awake()
     {
         Instance = this;
@@ -55,8 +57,8 @@ public class PlayerMovementController : MonoBehaviour
             if (CheckSideLimits())
                 velocity.x = speed_horizontal * movementChange.x;
         }
-
-        ownRb.velocity = velocity;
+        if (!isFlying)
+            ownRb.velocity = velocity;
     }
 
     bool CheckSideLimits()
@@ -79,5 +81,27 @@ public class PlayerMovementController : MonoBehaviour
         return true;
     }
 
+    public void Throw(Vector3 throwingVelocity)
+    {
+        isFlying = true;
+        Debug.Log(throwingVelocity);
+        ownRb.constraints = RigidbodyConstraints.None;
+        ownRb.velocity = throwingVelocity;
+    }
 
+    public void ResetRigidbody()
+    {
+        isFlying = false;
+        ownRb.velocity = Vector3.zero;
+        ownRb.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionY;
+    }
+
+    private void Update()
+    {
+
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            Throw(new Vector3(0, 20, 16));
+        }
+    }
 }

@@ -8,6 +8,7 @@ public class PlayerCollectionController : MonoBehaviour
 
     List<GameObject> collectedPlayerObjects = new List<GameObject>();
     [SerializeField] float pushPower = 10;
+    [SerializeField] GameObject collectionCollidersParent, landingCollidersParent;
     void Awake()
     {
         Instance = this;
@@ -33,4 +34,26 @@ public class PlayerCollectionController : MonoBehaviour
     {
         collectedPlayerObjects.ForEach(x => x.GetComponent<Rigidbody>().AddForce(Vector3.forward * pushPower));
     }
+
+    public void OpenCollectionColliders()
+    {
+        collectionCollidersParent.SetActive(true);
+    }
+
+    public void CloseCollectionColliders()
+    {
+        collectionCollidersParent.SetActive(false);
+    }
+
+    public void OpenLandingColliders()
+    {
+        landingCollidersParent.SetActive(true);
+    }
+
+    public void CloseLandingColliders()
+    {
+        landingCollidersParent.SetActive(false);
+    }
+
+
 }
