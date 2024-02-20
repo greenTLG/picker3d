@@ -36,6 +36,9 @@ public static class GameManager
     {
         if (GamePhase != GamePhases.Finishing)
             return;
+        GamePhase = GamePhases.Finished;
+        LevelManager.Instance.NextLevel();
+        //Show WinPanel UI
     }
 
     public static void PlayerFailed()
@@ -45,8 +48,24 @@ public static class GameManager
 
         if (GamePhase != GamePhases.Running)
             return;
+        GamePhase = GamePhases.Failed;
+    }
 
-        Debug.Log("Failed");
+    public static void OnClickedNextLevelButton()
+    {
+        PlayerMovementController.Instance.StartToMove_Horizontal();
+        GamePhase = GamePhases.Start;
+    }
+
+    public static void LevelLoaded()
+    {
+        PlayerMovementController.Instance.transform.position = LevelManager.Instance.GetCurrentLevel().GetPlayerStartPos();
+    }
+
+    public static void ResetGame()
+    {
+
+
     }
 
 }

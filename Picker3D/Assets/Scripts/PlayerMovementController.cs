@@ -84,7 +84,6 @@ public class PlayerMovementController : MonoBehaviour
     public void Throw(Vector3 throwingVelocity)
     {
         isFlying = true;
-        Debug.Log(throwingVelocity);
         ownRb.constraints = RigidbodyConstraints.None;
         ownRb.velocity = throwingVelocity;
     }
@@ -93,15 +92,14 @@ public class PlayerMovementController : MonoBehaviour
     {
         isFlying = false;
         ownRb.velocity = Vector3.zero;
+        ownRb.angularVelocity = Vector3.zero;
         ownRb.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionY;
     }
 
-    private void Update()
+    public void ResetPlayerMovement()
     {
-
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            Throw(new Vector3(0, 20, 16));
-        }
+        ResetRigidbody();
+        StopMovement_Forward();
+        StopMovement_Horizontal();
     }
 }

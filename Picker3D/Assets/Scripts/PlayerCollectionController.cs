@@ -55,5 +55,12 @@ public class PlayerCollectionController : MonoBehaviour
         landingCollidersParent.SetActive(false);
     }
 
+    public void ResetPlayerCollection()
+    {
+        collectedPlayerObjects.FindAll(x => x != null).ForEach(x => x.SetActive(false));
+        collectedPlayerObjects.Clear();
+        CloseLandingColliders();
+        OpenCollectionColliders();
+    }
 
 }

@@ -1,4 +1,5 @@
-﻿using Dreamteck.Splines;
+﻿using DG.Tweening;
+using Dreamteck.Splines;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -27,12 +28,14 @@ public class FinishController : MonoBehaviour
     [SerializeField] Vector2 throwingRange;
     LandingTrigger currentHighestLandingTrigger;
     List<LandingTrigger> landingTriggers = new List<LandingTrigger>();
+    [SerializeField] float sendingDuration = 1;
     private void OnTriggerEnter(Collider other)
     {
         if (currentState == States.Waiting)
         {
             if (other.CompareTag("Player"))
             {
+                GameManager.StartToFinish();
                 StartToClimbTheRamp();
             }
         }
@@ -140,6 +143,9 @@ public class FinishController : MonoBehaviour
         PlayerCollectionController.Instance.CloseLandingColliders();
         PlayerCollectionController.Instance.OpenCollectionColliders();
 
+        Transform playerTransform = PlayerMovementController.Instance.transform;
+        playerTransform.DORotate(Vector3.zero, sendingDuration).SetEase(Ease.InBack);
+        playerTransform.DOMove(LevelManager.Instance.GetNextLevel().GetPlayerStartPos(), sendingDuration).SetEase(Ease.InBack).OnComplete(GameManager.PlayerFinished);
     }
 
     public void AddLandingTrigger(LandingTrigger landingTrigger)
@@ -148,12 +154,4 @@ public class FinishController : MonoBehaviour
             return;
         landingTriggers.Add(landingTrigger);
     }
-
-
-
-
-
-
-
-
 }
