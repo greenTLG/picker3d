@@ -84,6 +84,7 @@ public class CheckpointController : MonoBehaviour
         currentState = States.Resulting;
         if (canPass)
         {
+            UIManager.Instance.WhenCheckpointCompleted();
             OpenBlockers();
             RaiseRoad();
             PlayerMovementController.Instance.Invoke("StartToMove_Forward", Mathf.Max(blockerOpeningTime, roadRaisingTime));

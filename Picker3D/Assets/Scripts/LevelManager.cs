@@ -92,7 +92,7 @@ public class LevelManager : MonoBehaviour
     public void NextLevel()
     {
         GameManager.ResetGame();
-        Destroy(currentLevel.gameObject,0.5f);
+        Destroy(currentLevel.gameObject, 0.5f);
         currentLevelNum++;
         currentLevel = nextLevel;
         currentLevelNum_real = nextLevelNum_real;
@@ -103,6 +103,15 @@ public class LevelManager : MonoBehaviour
         SaveSystem<int>.Save("levelNum", currentLevelNum);
         SaveSystem<int>.Save("levelNumReal", currentLevelNum_real);
         SaveSystem<int>.Save("nextlevelNumReal", nextLevelNum_real);
+    }
+    public void RestartLevel()
+    {
+        GameManager.ResetGame();
+        Vector3 levelPos = currentLevel.transform.position;
+        Destroy(currentLevel.gameObject);
+        currentLevel = SpawnLevel(currentLevelNum_real);
+        currentLevel.transform.position = levelPos;
+        GameManager.LevelLoaded();
     }
 
     public int GetLevelNum()

@@ -1,18 +1,25 @@
-﻿using System.Collections;
+﻿using Cinemachine;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    public static CameraController Instance { get; private set; }
+
+    [SerializeField] CinemachineVirtualCamera vCam;
+    CinemachineTransposer transposer;
+
+
+    private void Awake()
     {
-        
+        Instance = this;
+        transposer = vCam.GetCinemachineComponent<CinemachineTransposer>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ResetCam()
     {
-        
+        vCam.ForceCameraPosition(PlayerMovementController.Instance.transform.position + transposer.m_FollowOffset, vCam.transform.rotation);
     }
 }

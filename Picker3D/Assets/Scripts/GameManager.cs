@@ -21,7 +21,7 @@ public static class GameManager
     public static void StartToMove()
     {
         gamePhase = GamePhases.Running;
-        //UIManager.Instance.StartToMove();
+        UIManager.Instance.HideStartPanel();
         PlayerMovementController.Instance.StartToMove_Forward();
     }
 
@@ -37,8 +37,9 @@ public static class GameManager
         if (GamePhase != GamePhases.Finishing)
             return;
         GamePhase = GamePhases.Finished;
+        int rewardMoney = LevelManager.Instance.GetCurrentLevel().GetRewardMoney();
         LevelManager.Instance.NextLevel();
-        //Show WinPanel UI
+        UIManager.Instance.ShowWinPanel(rewardMoney);
     }
 
     public static void PlayerFailed()
@@ -49,6 +50,7 @@ public static class GameManager
         if (GamePhase != GamePhases.Running)
             return;
         GamePhase = GamePhases.Failed;
+        UIManager.Instance.ShowFailPanel();
     }
 
     public static void OnClickedNextLevelButton()
@@ -57,14 +59,26 @@ public static class GameManager
         GamePhase = GamePhases.Start;
     }
 
+    public static void OnClickedRestartLevelButton()
+    {
+        LevelManager.Instance.RestartLevel();
+        PlayerMovementController.Instance.transform.position = LevelManager.Instance.GetCurrentLevel().GetPlayerStartPos();
+        CameraController.Instance.ResetCam();
+        PlayerMovementController.Instance.StartToMove_Horizontal();
+        GamePhase = GamePhases.Start;
+    }
+
     public static void LevelLoaded()
     {
         PlayerMovementController.Instance.transform.position = LevelManager.Instance.GetCurrentLevel().GetPlayerStartPos();
+        UIManager.Instance.SetLevelNum(LevelManager.Instance.GetLevelNum());
     }
 
     public static void ResetGame()
     {
-
+        PlayerMovementController.Instance.ResetPlayerMovement();
+        PlayerCollectionController.Instance.ResetPlayerCollection();
+        UIManager.Instance.ResetUIManager();
 
     }
 

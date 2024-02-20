@@ -123,6 +123,7 @@ public class FinishController : MonoBehaviour
         if (currentHighestLandingTrigger == null || landingTrigger.GetValue() > currentHighestLandingTrigger.GetValue())
         {
             currentHighestLandingTrigger = landingTrigger;
+            CancelInvoke("LandingFinished");
             Invoke("LandingFinished", 1.5f);
         }
     }

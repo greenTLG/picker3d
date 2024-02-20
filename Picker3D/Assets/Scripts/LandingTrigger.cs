@@ -32,7 +32,7 @@ public class LandingTrigger : MonoBehaviour
 
     public void PlayerEarnedTheValue()
     {
-
+        MoneyManager.Instance.EarnMoney(value, transform.position,false,UIManager.MoneySendingTypes.Parallel);
     }
 
     public void Shrink()
