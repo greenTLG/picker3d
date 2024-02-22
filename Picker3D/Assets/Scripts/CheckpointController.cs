@@ -61,6 +61,11 @@ public class CheckpointController : MonoBehaviour
         }
     }
 
+    public int GetTargetCount()
+    {
+        return targetCount;
+    }
+
     public void SetTargetCount(int count)
     {
         targetCount = count;
