@@ -53,6 +53,7 @@ public class CheckpointController : MonoBehaviour
         {
             if (other.CompareTag("Player"))
             {
+                PlayerCollectionController.Instance.DeleteArms();
                 PlayerMovementController.Instance.StopMovement_Forward();
                 PlayerCollectionController.Instance.PushCollectedPlayerObjects();
                 currentState = States.Collecting;

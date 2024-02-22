@@ -55,3 +55,10 @@ MonoBehaviour:
     prefab: {fileID: 1500967787153435629, guid: e8d9658bb1abc824282902d1bbc3d673,
       type: 3}
     size: 50
+  - tag: MoneyImage
+    prefab: {fileID: 6454278898111979096, guid: 581e778a1f578f64884b49c0b0696631,
+      type: 3}
+    size: 10
+  - tag: Arm1
+    prefab: {fileID: 382885331842081326, guid: 7236d0ccb8cf938489698fa37114f556, type: 3}
+    size: 2

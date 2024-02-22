@@ -9,6 +9,8 @@ public class PlayerCollectionController : MonoBehaviour
     List<GameObject> collectedPlayerObjects = new List<GameObject>();
     [SerializeField] float pushPower = 10;
     [SerializeField] GameObject collectionCollidersParent, landingCollidersParent;
+    [SerializeField] Transform[] armPositons = new Transform[2];
+    List<GameObject> armGOs = new List<GameObject>();
     void Awake()
     {
         Instance = this;
@@ -63,4 +65,20 @@ public class PlayerCollectionController : MonoBehaviour
         OpenCollectionColliders();
     }
 
+    public void SetArms(string armTag)
+    {
+        for (int i = 0; i < armPositons.Length; i++)
+        {
+            GameObject tempArm = ObjectPooler.Instance.SpawnFromPool(armTag, armPositons[i].position, armPositons[i].rotation);
+            tempArm.transform.parent = armPositons[i];
+            armGOs.Add(tempArm);
+        }
+    }
+
+    public void DeleteArms()
+    {
+        armGOs.ForEach(x => x.transform.parent = null);
+        armGOs.ForEach(x => x.gameObject.SetActive(false));
+        armGOs.Clear();
+    }
 }
