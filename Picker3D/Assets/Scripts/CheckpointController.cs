@@ -58,6 +58,7 @@ public class CheckpointController : MonoBehaviour
                 PlayerCollectionController.Instance.PushCollectedPlayerObjects();
                 currentState = States.Collecting;
                 CheckTargetCount();
+                Taptic.Medium();
             }
         }
     }

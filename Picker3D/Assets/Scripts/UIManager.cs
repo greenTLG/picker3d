@@ -97,7 +97,7 @@ public class UIManager : MonoBehaviour
         if (currentLevelText != null)
             currentLevelText.text = levelNum.ToString();
         if (nextLevelText != null)
-            nextLevelText.text = (levelNum+1).ToString();
+            nextLevelText.text = (levelNum + 1).ToString();
     }
 
     public void SetMoneyCount(int moneyCount, float duration = 0, float delay = 0)
@@ -130,6 +130,8 @@ public class UIManager : MonoBehaviour
                     tempMoneyTransform.DOLocalMove(Vector3.zero, durationPerMoneyImage).SetDelay(i * durationPerMoneyImage / 2).OnComplete(() =>
                     {
                         tempMoneyTransform.gameObject.SetActive(false);
+                        Taptic.Medium();
+                        SoundManager.Instance.Play("Money");
                     });
                     tempMoneyTransform.DOLocalRotate(new Vector3(0, 0, 360), durationPerMoneyImage, RotateMode.FastBeyond360).SetDelay(i * durationPerMoneyImage / 2);
                 }
@@ -143,8 +145,10 @@ public class UIManager : MonoBehaviour
                     tempMoneyTransform.DOLocalMove(Vector3.zero, duration * 2 / 3).SetDelay(duration / 3).OnComplete(() =>
                     {
                         tempMoneyTransform.gameObject.SetActive(false);
+                        Taptic.Medium();
+                        SoundManager.Instance.Play("Money");
                     });
-                    tempMoneyTransform.DOLocalRotate(new Vector3(0, 0, 360), duration * 2 /3, RotateMode.FastBeyond360).SetDelay(duration / 3);
+                    tempMoneyTransform.DOLocalRotate(new Vector3(0, 0, 360), duration * 2 / 3, RotateMode.FastBeyond360).SetDelay(duration / 3);
                 }
                 break;
             default:
@@ -175,6 +179,8 @@ public class UIManager : MonoBehaviour
             default:
                 break;
         }
+        Taptic.Medium();
+        SoundManager.Instance.Play("UI");
 
     }
 

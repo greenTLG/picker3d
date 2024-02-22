@@ -15,11 +15,15 @@ public class PlayerObjectController : MonoBehaviour
             return;
         isCollected = true;
         Invoke("Explode", explosionDelay);
+        Taptic.Medium();
+        SoundManager.Instance.Play("WhenPlayerObjCollected");
     }
 
     void Explode()
     {
         ParticleManager.Instance.Play("PlayerObjExplosion", transform.position);
         gameObject.SetActive(false);
+        Taptic.Medium();
+        SoundManager.Instance.Play("WhenPlayerObjExploded");
     }
 }

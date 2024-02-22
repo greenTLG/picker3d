@@ -11,6 +11,7 @@ public class ArmPowerUp : MonoBehaviour
         {
             PlayerCollectionController.Instance.SetArms(armTag);
             gameObject.SetActive(false);
+            Taptic.Medium();
         }
     }
 }

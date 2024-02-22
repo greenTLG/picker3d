@@ -23,6 +23,7 @@ public static class GameManager
         gamePhase = GamePhases.Running;
         UIManager.Instance.HideStartPanel();
         PlayerMovementController.Instance.StartToMove_Forward();
+        Taptic.Medium();
     }
 
     public static void StartToFinish()
@@ -30,6 +31,7 @@ public static class GameManager
         if (GamePhase != GamePhases.Running)
             return;
         gamePhase = GamePhases.Finishing;
+        Taptic.Medium();
     }
 
     public static void PlayerFinished()
@@ -40,6 +42,7 @@ public static class GameManager
         int rewardMoney = LevelManager.Instance.GetCurrentLevel().GetRewardMoney();
         LevelManager.Instance.NextLevel();
         UIManager.Instance.ShowWinPanel(rewardMoney);
+        Taptic.Success();
     }
 
     public static void PlayerFailed()
@@ -51,6 +54,7 @@ public static class GameManager
             return;
         GamePhase = GamePhases.Failed;
         UIManager.Instance.ShowFailPanel();
+        Taptic.Failure();
     }
 
     public static void OnClickedNextLevelButton()

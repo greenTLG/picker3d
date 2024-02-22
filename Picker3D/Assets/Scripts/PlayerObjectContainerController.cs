@@ -49,6 +49,7 @@ public class PlayerObjectContainerController : MonoBehaviour
             spawnedPlayerObjects.Add(ObjectPooler.Instance.SpawnFromPool(playerObjTags[Random.Range(0, playerObjTags.Length)], spawnCollider.bounds.RandomPointInBounds(), Random.rotation));
         }
         gameObject.SetActive(false);
+        Taptic.Medium();
     }
 
     void StartToMove()
