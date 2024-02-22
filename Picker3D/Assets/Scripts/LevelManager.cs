@@ -37,11 +37,15 @@ public class LevelManager : MonoBehaviour
 
         currentLevelNum = SaveSystem<int>.Load("levelNum", currentLevelNum);
         currentLevelNum_real = SaveSystem<int>.Load("levelNumReal", currentLevelNum);
-        nextLevelNum_real = SaveSystem<int>.Load("nextLevelNumReal", currentLevelNum + 1);
+        nextLevelNum_real = SaveSystem<int>.Load("nextLevelNumReal", -1);
 
         if (levelCount > 0)
         {
+
             currentLevel = SpawnLevel(currentLevelNum_real);
+
+            if (nextLevelNum_real == -1)
+                nextLevelNum_real = GetRealLevelNum(currentLevelNum + 1, currentLevelNum_real);
             nextLevel = SpawnLevel(nextLevelNum_real);
             nextLevel.transform.position = currentLevel.GetNextLevelPos();
         }

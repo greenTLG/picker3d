@@ -45,6 +45,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   folderName: Levels
   levelNameWithoutLevelNumber: Level
-  levelCount: 0
+  levelCount: 3
   currentLevelNum: 1
   randomLevelsAfterNormalLevels: 1
