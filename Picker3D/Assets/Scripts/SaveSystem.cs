@@ -9,7 +9,7 @@ public static class SaveSystem<T>
 {
     static string extensionName = "picker";
 
-    static bool isSaveSystemOn = false;
+    static bool isSaveSystemOn = true;
 
     public static void Save(string name, T value)
     {
