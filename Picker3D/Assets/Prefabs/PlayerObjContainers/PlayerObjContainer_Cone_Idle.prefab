@@ -48,7 +48,7 @@ PrefabInstance:
     - target: {fileID: 3322368844724737606, guid: db80e4979b675734cba65d7aed74aee6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3322368844724737606, guid: db80e4979b675734cba65d7aed74aee6,
         type: 3}
@@ -93,7 +93,7 @@ PrefabInstance:
     - target: {fileID: 3322368844724737607, guid: db80e4979b675734cba65d7aed74aee6,
         type: 3}
       propertyPath: m_Name
-      value: PlayerObjContainer_Cone
+      value: PlayerObjContainer_Cone_Idle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db80e4979b675734cba65d7aed74aee6, type: 3}

@@ -56,7 +56,7 @@ public class SpawnablesManager : MonoBehaviour
             if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
             {
                 if (hit.transform != currentSpawnPreview.transform)
-                    currentSpawnPreview.transform.position = hit.point;
+                    currentSpawnPreview.transform.position = hit.point +selectedSpawnable.GetPosOffset();
 
                 if (Input.GetMouseButtonDown(0))
                 {

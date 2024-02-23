@@ -106,9 +106,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3322368844724737592, guid: db80e4979b675734cba65d7aed74aee6,
         type: 3}
+      propertyPath: movementTime
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3322368844724737592, guid: db80e4979b675734cba65d7aed74aee6,
+        type: 3}
       propertyPath: spawnCollider
       value: 
       objectReference: {fileID: 3365884703787446860}
+    - target: {fileID: 3322368844724737592, guid: db80e4979b675734cba65d7aed74aee6,
+        type: 3}
+      propertyPath: localMovementTarget.z
+      value: -5
+      objectReference: {fileID: 0}
     - target: {fileID: 3322368844724737592, guid: db80e4979b675734cba65d7aed74aee6,
         type: 3}
       propertyPath: playerObjTags.Array.size
@@ -132,7 +142,7 @@ PrefabInstance:
     - target: {fileID: 3322368844724737606, guid: db80e4979b675734cba65d7aed74aee6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3322368844724737606, guid: db80e4979b675734cba65d7aed74aee6,
         type: 3}
@@ -177,7 +187,7 @@ PrefabInstance:
     - target: {fileID: 3322368844724737607, guid: db80e4979b675734cba65d7aed74aee6,
         type: 3}
       propertyPath: m_Name
-      value: PlayerObjContainer_Icosphere
+      value: PlayerObjContainer_Icosphere_Moving
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db80e4979b675734cba65d7aed74aee6, type: 3}

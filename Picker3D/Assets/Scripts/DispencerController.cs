@@ -18,10 +18,11 @@ public class DispencerController : MonoBehaviour
     bool spawn = false;
     [SerializeField] Transform propellersParent;
 
-    private void Start()
+    private IEnumerator Start()
     {
         if (ObjectPooler.Instance != null)
         {
+            yield return new WaitForSeconds(2);
             parentForWaitingPlayerObjs.gameObject.SetActive(false);
             float currentPercent = 0;
             float percentPerPlayerObj = 1f / (spawnCount - 1);

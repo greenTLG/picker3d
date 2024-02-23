@@ -1,18 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!65 &2736753051695835146
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8018839341644251189}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3, y: 3, z: 3}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5998465662730141102
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,6 +79,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &2736753051695835146
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8018839341644251189}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3, y: 3, z: 3}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &4707333882859918962
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -104,6 +104,11 @@ PrefabInstance:
       propertyPath: spawnCollider
       value: 
       objectReference: {fileID: 2736753051695835146}
+    - target: {fileID: 3322368844724737592, guid: db80e4979b675734cba65d7aed74aee6,
+        type: 3}
+      propertyPath: localMovementTarget.y
+      value: -7
+      objectReference: {fileID: 0}
     - target: {fileID: 3322368844724737592, guid: db80e4979b675734cba65d7aed74aee6,
         type: 3}
       propertyPath: playerObjTags.Array.size
@@ -127,7 +132,7 @@ PrefabInstance:
     - target: {fileID: 3322368844724737606, guid: db80e4979b675734cba65d7aed74aee6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 8.25
       objectReference: {fileID: 0}
     - target: {fileID: 3322368844724737606, guid: db80e4979b675734cba65d7aed74aee6,
         type: 3}
@@ -172,7 +177,7 @@ PrefabInstance:
     - target: {fileID: 3322368844724737607, guid: db80e4979b675734cba65d7aed74aee6,
         type: 3}
       propertyPath: m_Name
-      value: PlayerObjContainer_Cube
+      value: PlayerObjContainer_Cube_Falling
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db80e4979b675734cba65d7aed74aee6, type: 3}

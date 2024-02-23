@@ -19,21 +19,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 981254614434885670, guid: 3f3a9d29d50939e41a08f443d925d87d,
         type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 981254614434885670, guid: 3f3a9d29d50939e41a08f443d925d87d,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 981254614434885670, guid: 3f3a9d29d50939e41a08f443d925d87d,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 981254614434885670, guid: 3f3a9d29d50939e41a08f443d925d87d,
-        type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
@@ -70,7 +55,7 @@ PrefabInstance:
     - target: {fileID: 981254614434885671, guid: 3f3a9d29d50939e41a08f443d925d87d,
         type: 3}
       propertyPath: m_Name
-      value: Dispencer_S_Icosphere
+      value: Dispencer_S_Icosphere Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f3a9d29d50939e41a08f443d925d87d, type: 3}

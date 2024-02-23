@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using TMPro;
+﻿using TMPro;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -40,5 +38,8 @@ public class SpawnableController : MonoBehaviour, IPointerClickHandler
         return (PrefabUtility.InstantiatePrefab(spawnablePrefab) as GameObject).AddComponent<SpawnPreview>();
     }
 
-
+    public Vector3 GetPosOffset()
+    {
+        return spawnablePrefab.transform.localPosition;
+    }
 }

@@ -172,21 +172,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8997875901050199276, guid: 8ec223fa7014bc74f8e4b4bd5f0c58d8,
         type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8997875901050199276, guid: 8ec223fa7014bc74f8e4b4bd5f0c58d8,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8997875901050199276, guid: 8ec223fa7014bc74f8e4b4bd5f0c58d8,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8997875901050199276, guid: 8ec223fa7014bc74f8e4b4bd5f0c58d8,
-        type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
@@ -228,7 +213,17 @@ PrefabInstance:
     - target: {fileID: 8997875901050199279, guid: 8ec223fa7014bc74f8e4b4bd5f0c58d8,
         type: 3}
       propertyPath: m_Name
-      value: ArmPowerUp
+      value: ArmPowerUp1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8997875902859262702, guid: 8ec223fa7014bc74f8e4b4bd5f0c58d8,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.91320723
+      objectReference: {fileID: 0}
+    - target: {fileID: 8997875902859262702, guid: 8ec223fa7014bc74f8e4b4bd5f0c58d8,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.4074955
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ec223fa7014bc74f8e4b4bd5f0c58d8, type: 3}

@@ -29,9 +29,15 @@ public class CheckpointController : MonoBehaviour
     [SerializeField] float decisionDelay = 1;
 
     int collectedCount = 0;
-    int targetCount = 10;
+    [SerializeField] int targetCount = 10;
     bool canPass = false;
     States currentState = States.Waiting;
+
+    private void Start()
+    {
+        UpdatePoolText();
+    }
+
     public void WhenPlayerObjectCollected()
     {
         collectedCount++;
@@ -115,6 +121,11 @@ public class CheckpointController : MonoBehaviour
     {
         successRoad.gameObject.SetActive(true);
         successRoad.DOLocalMoveY(roadTargetLocalY, roadRaisingTime).SetEase(roadRaisingEase);
+    }
+
+    private void OnValidate()
+    {
+        UpdatePoolText();
     }
 
 
